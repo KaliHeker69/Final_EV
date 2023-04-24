@@ -1,0 +1,13 @@
+input[type=text] {
+    transition: all 0.5s ease-in-out;
+    width: 45%;
+}
+  
+input[type=text]:focus {
+    width: 80%;
+    box-shadow: 0 0 0 4px rgba(21, 156, 228, 0.4);
+}
+
+form_flask.ffrapid{
+    padding-top: 30px;
+}

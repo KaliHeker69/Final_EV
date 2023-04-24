@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Kaptcha EV</title>
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">x`
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+      <!-- fevicon -->
+      <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='jquery.mCustomScrollbar.min.css') }}">
+      <!-- Flask Form Custom CSS -->     
+      <link rel="stylesheet" href="{{ url_for('static', filename='flask_form.css') }}">
+
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="{{ url_for('static', filename='logo.png') }}" alt="#" width="70"
+                                 height="auto"/></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item ">
+                                 <a class="nav-link" href="index.html"> Home  </a>
+                              </li>
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="about.html">Model</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="login.html"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i>Login/Register</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+     
+      <!-- about -->
+      <div  class="about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>EV Efficieny Predictor</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="container" >
+               <div class="row" >
+                  <div class="col-md-10 offset-md-1" >
+                     <div class="about_img" >
+                        <div class="about_box" >
+                           <div class="form_flask">
+                              <form action="{{ url_for('model') }}"method="post">
+                                 <div class="cars_list" >
+                                    <h3>Car Brand:</h3>
+                                    <select name="cars" type="number">
+                                    <option value ="3">Tesla</option>
+                                    <option value ="3">Audi</option>
+                                    <option value ="1">Porsche</option>
+                                    <option value ="6">Hyundai</option>
+                                    <option value ="6">Volkswagen</option>
+                                    <option value ="4">Polestar</option>
+                                    <option value ="4">BMW</option>
+                                    <option value ="6">Honda</option>
+                                    <option value ="2">Lucid</option>
+                                    <option value ="6">Peugeot</option>
+                                    <option value ="4">Mercedes</option>
+                                    <option value ="5">Nissan</option>
+                                    <option value ="6">MG</option>
+                                    <option value ="6">Mini</option>
+                                    <option value ="5">Opel</option>
+                                    <option value ="4">Volvo</option>
+                                    <option value ="5">Skoda</option>
+                                    <option value ="5">Kia</option>
+                                    <option value ="6">Renault</option>
+                                    <option value="6">Mazda</option>
+                                    <option value ="4">Lexus</option>
+                                    <option value ="4">CUPRA</option>
+                                    <option value ="7">SEAT</option>
+                                    <option value ="1">Lightyear</option>
+                                    <option value ="6">Aiways</option>
+                                    <option value ="6">DS</option>
+                                    <option value ="6">Citroen</option>
+                                    <option value ="3">Jaguar</option>
+                                    <option value ="4">Ford</option>
+                                    <option value ="4">Byton</option>
+                                    <option value ="7">Sono</option>
+                                    <option value ="7">Smart</option>
+                                    <option value ="6">Fiat</option>
+                                    </select>
+                                 </div><br><br>
+                                 <label for="AccelSec"><h3>Acceleration:</h3></label><br>
+                                 <input type="number" id="AccelSec" name="AccelSec" required="required"><br><br>
+                                 <label for="TopSpeed_KmH"><h3>Top speed:</h3></label><br>
+                                 <input type="number" id="TopSpeed_KmH" name="TopSpeed_KmH" required="required"><br><br>
+                                 <label for="Range_Km"><h3>Range:</h3></label><br>
+                                 <input type="number" id="Range_Km" name="range" required="required"><br><br>
+                                 <label for="Efficiency_WhKm"><h3>FastCharge_KmH:</h3></label><br>
+                                 <input type="number" id="Efficiency_WhKm" name="Efficiency_WhKm" required="required">
+                                 <p><h3>Predicted Price is: {{ prediction_text }}</h3></p>
+                                 <button type="submit" class="btn btn-primary btn-block btn-large" style="border-radius: 20px;">Predict</button>
+                              </form><br><br><br><br>
+
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      
+      <!--  footer -->
+      <footer id="contact">
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="titlepage">
+                        <h2>Contact Us</h2>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+                     <ul class="location_icon">
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locatins</li>
+                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +91 100</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>arpun@kaptcha.com</li>
+                     </ul>
+                  </div>
+                  <div class="col-md-6">
+                     <form id="request" class="main_form">
+                        <div class="row">
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           </div>
+                           <div class="col-md-12">
+                              <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <ul class="social_icon">
+                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="map">
+                        <figure><img src="{{ url_for('static', filename='map.jpg') }}" alt="#"/></figure>
+                     </div>
+                     <form class="bottom_form">
+                        <h3>Newsletter</h3>
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>Copyright 2023 All Right Reserved By <a href="">Team KAPTCHA</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='popper.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='jquery-3.0.0.min.js') }}"></script>
+      <!-- sidebar -->
+      <script src="{{ url_for('static', filename='jquery.mCustomScrollbar.concat.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='customs.js') }}"></script>
+   </body>
+</html>
